@@ -92,10 +92,10 @@ h1{
 }
 </style>
 </head>
+
 <body>
 
-<!-- موسيقى تشتغل تلقائي -->
-<audio id="bgMusic" loop autoplay playsinline>
+<audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -154,8 +154,8 @@ h1{
 <p>
 إذا ما لقيتي سبب لتضحكي،
 تذكري أي موقف غريب أو محرج صار بيناتنا،
-تذكري وقت كنت عصّب وقلك انا كلب ابن كلب. 😆
 تذكري وقت كنتي تقوليلي يا اسود😂
+ ووقت كنت عصّب وصير قلك انا كلب ابن كلب🤣
 </p>
 </div>
 </div>
@@ -208,13 +208,21 @@ h1{
 </div>
 
 <div class="footer">
-رسائل من قلب محمد لرُبى ❤️
-    بحبك كتيرر
+رسائل من قلب محمد لرُبى ❤️ بحبك كتيرر
 </div>
 
 <script>
 
+const music = document.getElementById("bgMusic");
+let started = false;
+
 function toggle(button){
+
+    if(!started){
+        music.play().catch(()=>{});
+        started = true;
+    }
+
     const msg = button.nextElementSibling;
 
     if(msg.style.maxHeight){
@@ -223,15 +231,6 @@ function toggle(button){
         msg.style.maxHeight = msg.scrollHeight + "px";
     }
 }
-
-// محاولة تشغيل الموسيقى تلقائياً
-window.addEventListener("load", () => {
-    const music = document.getElementById("bgMusic");
-    music.play().catch(() => {
-        // إذا المتصفح منع التشغيل التلقائي
-        console.log("Autoplay blocked");
-    });
-});
 
 setInterval(() => {
 
