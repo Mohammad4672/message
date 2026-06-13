@@ -74,20 +74,6 @@ h1{
     font-size:17px;
 }
 
-.music-btn{
-    position:fixed;
-    top:15px;
-    left:15px;
-    border:none;
-    background:#ff7aa2;
-    color:white;
-    padding:12px 18px;
-    border-radius:12px;
-    cursor:pointer;
-    z-index:9999;
-    font-size:15px;
-}
-
 .footer{
     text-align:center;
     margin-top:30px;
@@ -108,13 +94,10 @@ h1{
 </head>
 <body>
 
-<audio id="bgMusic" loop>
+<!-- موسيقى تشتغل تلقائي -->
+<audio id="bgMusic" loop autoplay playsinline>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
-
-<button class="music-btn" onclick="playMusic()">
-🎵 تشغيل الموسيقى
-</button>
 
 <h1>💌 رسائل لرُبى</h1>
 <p class="subtitle">افتحي الرسالة المناسبة للحظة اللي عم تعيشيها ❤️</p>
@@ -172,7 +155,7 @@ h1{
 إذا ما لقيتي سبب لتضحكي،
 تذكري أي موقف غريب أو محرج صار بيناتنا،
 تذكري وقت كنت عصّب وقلك انا كلب ابن كلب. 😆
-تذكري قت كنتي تقوليلي يا اسود😂
+تذكري وقت كنتي تقوليلي يا اسود😂
 </p>
 </div>
 </div>
@@ -197,7 +180,7 @@ h1{
 <div class="message">
 <p>
 إذا في شي مزعلك هلق،
-بديك تعرفي إنو الزعل مهما كبر ما بيدوم.
+بدي ياكي تعرفي إنو الزعل مهما كبر ما بيدوم.
 خدي وقتك،
 محمد اسماعيل موجود ومعك ضد العالم كلو،
 احكي إذا بدك،
@@ -225,7 +208,8 @@ h1{
 </div>
 
 <div class="footer">
-صُنع بكل محبة ❤️
+رسائل من قلب محمد لرُبى ❤️
+    بحبك كتيرر
 </div>
 
 <script>
@@ -240,9 +224,14 @@ function toggle(button){
     }
 }
 
-function playMusic(){
-    document.getElementById("bgMusic").play();
-}
+// محاولة تشغيل الموسيقى تلقائياً
+window.addEventListener("load", () => {
+    const music = document.getElementById("bgMusic");
+    music.play().catch(() => {
+        // إذا المتصفح منع التشغيل التلقائي
+        console.log("Autoplay blocked");
+    });
+});
 
 setInterval(() => {
 
