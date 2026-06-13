@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رسائل لرُبى ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Tahoma, Arial, sans-serif;
+    background:linear-gradient(135deg,#ffe6ee,#fff5f8);
+    min-height:100vh;
+    padding:30px;
+    overflow-x:hidden;
+}
+
+h1{
+    text-align:center;
+    color:#d63384;
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:35px;
+}
+
+.container{
+    max-width:750px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    background:#ff7aa2;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ff5f92;
+}
+
+.message{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .7s ease;
+}
+
+.message p{
+    padding:25px;
+    line-height:2;
+    color:#444;
+    font-size:17px;
+}
+
+.music-btn{
+    position:fixed;
+    top:15px;
+    left:15px;
+    border:none;
+    background:#ff7aa2;
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    z-index:9999;
+    font-size:15px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:#999;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="playMusic()">
+🎵 تشغيل الموسيقى
+</button>
+
+<h1>💌 رسائل لرُبى</h1>
+<p class="subtitle">افتحي الرسالة المناسبة للحظة اللي عم تعيشيها ❤️</p>
+
+<div class="container">
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+💭 افتحي لما تشتاقيلي
+</button>
+<div class="message">
+<p>
+إذا عم تشتاقيلي هلق،
+فاعرفي إنك ببالي أكتر ما بتتصوري.
+وحتى لو ما كنا بنفس المكان،
+في شي مني دايمًا حدّك. ❤️
+</p>
+</div>
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+🌙 افتحي لما ما تقدري تنامي
+</button>
+<div class="message">
+<p>
+إذا الليل طول عليكي،
+حاولي ترتاحي وتتركي كل شي لبكرا.وانا موجود
+تعي حكيلي كل شي بقلبك ومنحلو سوا
+وانا ما بتركك تنامي مضايقة. 🤍
+</p>
+</div>
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+🤍 افتحي لما تحسي إنك لحالك
+</button>
+<div class="message">
+<p>
+يمكن تمر لحظات تحسي فيها إنو ما حدا فاهمك،
+بس تذكري انو انا بفهمك بلا ما تحكي
+وما تترددي ابداً انو تحكيني
+بأي وقت بدك ياه❤️.
+</p>
+</div>
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+😂 افتحي لما تحتاجي تبتسمي
+</button>
+<div class="message">
+<p>
+إذا ما لقيتي سبب لتضحكي،
+تذكري أي موقف غريب أو محرج صار بيناتنا،
+تذكري وقت كنت عصّب وقلك انا كلب ابن كلب. 😆
+تذكري قت كنتي تقوليلي يا اسود😂
+</p>
+</div>
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+🌹 افتحي لما تحبي تعرفي شو رأيي فيكي
+</button>
+<div class="message">
+<p>
+رأيي فيكي إنك من الأشخاص اللي وجودهم بيريّح القلب،
+وانو وجودك خير بهالدنيا وضحكتك احلى شي بهالحياة.
+❤️
+</p>
+</div>
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+😔 افتحي لما تكوني زعلانة
+</button>
+<div class="message">
+<p>
+إذا في شي مزعلك هلق،
+بديك تعرفي إنو الزعل مهما كبر ما بيدوم.
+خدي وقتك،
+محمد اسماعيل موجود ومعك ضد العالم كلو،
+احكي إذا بدك،
+وتذكري انو انا موجود ورح كون حدك وعد منّي...
+بس ما تنسي أبدًا إنك شخص غالي كتير،
+وإنو ضحكتك أحلى بكتير من أي شي عم يزعجك.
+🤍
+</p>
+</div>
+</div>
+
+<div class="card">
+<button class="btn" onclick="toggle(this)">
+❤️ افتحي لما بدك تعرفي ليش عملت هالموقع
+</button>
+<div class="message">
+<p>
+لأن في أشخاص بالحياة بيستاهلوا شي معمول خصيصًا كرمالهم...
+وإنتِ واحدة من هالأشخاص.
+❤️
+</p>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+صُنع بكل محبة ❤️
+</div>
+
+<script>
+
+function toggle(button){
+    const msg = button.nextElementSibling;
+
+    if(msg.style.maxHeight){
+        msg.style.maxHeight = null;
+    }else{
+        msg.style.maxHeight = msg.scrollHeight + "px";
+    }
+}
+
+function playMusic(){
+    document.getElementById("bgMusic").play();
+}
+
+setInterval(() => {
+
+    const heart = document.createElement("div");
+
+    const hearts = ["❤️","💖","💕","💗","💘"];
+
+    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.fontSize = (20 + Math.random()*25) + "px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "9999";
+    heart.style.animation = "floatUp 6s linear forwards";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    },6000);
+
+},400);
+
+</script>
+
+</body>
+</html>
